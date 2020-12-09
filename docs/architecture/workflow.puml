@@ -1,0 +1,18 @@
+@startuml
+|Workflow|
+start
+:startProcess;
+|#AntiqueWhite|Application1|
+:Сервис foo1;
+|Workflow|
+:activityCallback;
+|Application1|
+:Сервис foo2;
+|Workflow|
+:activityCallback;
+|#AntiqueWhite|Application2|
+:Сервис foo3;
+|Workflow|
+:activityCallback;
+stop
+@enduml
