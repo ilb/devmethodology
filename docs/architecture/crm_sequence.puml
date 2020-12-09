@@ -62,9 +62,9 @@ note right
     Делаем редирект на предоставленный ранее в контексте callback_url
     в переменные которого добавляем адрес для получения результатов работы result_url
 end note
-SERVICE->BROWSER : HEADER Location: callback_url
-BROWSER->WORKFLOW : GET callbackUrl?resultUrl=...
-WORKFLOW->SERVICE : GET result_url
+SERVICE->BROWSER : HEADER Location: callbackUrl?contextUrl=...
+BROWSER->WORKFLOW : GET callbackUrl?contextUrl=...
+WORKFLOW->SERVICE : GET contextUrl
 SERVICE->WORKFLOW : 200 OK
 note right
     Мини машина процессов забирает результаты работы сервиса.
@@ -75,8 +75,8 @@ note right
 end note
 end
 WORKFLOW->BROWSER : HEADER Redirect-to initial callbackUrl
-BROWSER->CRM : GET callbackUrl & resultUrl=...
-CRM->WORKFLOW : GET result_url
+BROWSER->CRM : GET callbackUrl?contextUrl=...
+CRM->WORKFLOW : GET contextUrl
 WORKFLOW->CRM : 200 OK
 note right
     Получаем наконец то результаты в СРМ
