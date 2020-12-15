@@ -67,28 +67,4 @@ note right
     Отобразим ее в iframe
 end note
 
-productcart -down-> "
-{{
-salt
-{
-{/ <&command> Действие | <&person> Анкета | <&cart> Корзина | <b>Досье  }
-{
- <color:Blue>iframe src="https:///service3/dossier?uid=...."
-
-Загрузить { "file.pdf " | [Обзор...] }
-(X) __Анкета__
-() __Договор залога__
-() Договор поручительства
-() Кредитный договор
-}
-}
-}}
-" as dossier
-
-note right
-    Для выполнения работы
-    может понадобиться досье
-    Отобразим его в iframe
-end note
-
 @enduml
